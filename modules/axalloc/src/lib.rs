@@ -30,6 +30,8 @@ cfg_if::cfg_if! {
         use allocator::BuddyByteAllocator as DefaultByteAllocator;
     } else if #[cfg(feature = "tlsf")] {
         use allocator::TlsfByteAllocator as DefaultByteAllocator;
+    } else if #[cfg(feature = "verified")] {
+        use allocator::VerifiedBitmapAllocator as DefaultByteAllocator;
     }
 }
 
@@ -67,6 +69,8 @@ impl GlobalAllocator {
                 "buddy"
             } else if #[cfg(feature = "tlsf")] {
                 "TLSF"
+            } else if #[cfg(feature = "verified")] {
+                "verified"
             }
         }
     }

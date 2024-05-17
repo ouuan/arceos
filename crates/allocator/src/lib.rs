@@ -31,6 +31,11 @@ mod tlsf;
 #[cfg(feature = "tlsf")]
 pub use tlsf::TlsfByteAllocator;
 
+#[cfg(feature = "verified")]
+mod verified;
+#[cfg(feature = "verified")]
+pub use verified::VerifiedBitmapAllocator;
+
 use core::alloc::Layout;
 use core::ptr::NonNull;
 

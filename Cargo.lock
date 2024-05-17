@@ -31,6 +31,7 @@ dependencies = [
  "rand",
  "rlsf",
  "slab_allocator",
+ "verified-allocator",
 ]
 
 [[package]]
@@ -593,6 +594,22 @@ name = "buddy_system_allocator"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "43f9365b6b0c9e1663ca4ca9440c00eda46bc85a3407070be8b5e0d8d1f29629"
+
+[[package]]
+name = "builtin"
+version = "0.1.0"
+
+[[package]]
+name = "builtin_macros"
+version = "0.1.0"
+dependencies = [
+ "prettyplease_verus",
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
+ "syn_verus",
+ "synstructure",
+]
 
 [[package]]
 name = "bumpalo"
@@ -1411,6 +1428,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "prettyplease_verus"
+version = "0.1.15"
+dependencies = [
+ "proc-macro2",
+ "syn_verus",
+]
+
+[[package]]
 name = "proc-macro-error"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1793,6 +1818,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "syn_verus"
+version = "1.0.95"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "unicode-ident",
+]
+
+[[package]]
+name = "synstructure"
+version = "0.12.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f36bdaa60a83aca3921b5259d5400cbf5e90fc51931376a9bd4a0eb79aa7210f"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
+ "unicode-xid",
+]
+
+[[package]]
 name = "thiserror"
 version = "1.0.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1882,6 +1928,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c0edd1e5b14653f783770bce4a4dabb4a5108a5370a5f5d8cfe8710c361f6c8b"
 
 [[package]]
+name = "unicode-xid"
+version = "0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f962df74c8c05a667b5ee8bcf162993134c104e96440b663c8daa176dc772d8c"
+
+[[package]]
+name = "verified-allocator"
+version = "0.1.0"
+dependencies = [
+ "vstd",
+]
+
+[[package]]
 name = "version_check"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1921,6 +1980,14 @@ name = "volatile"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "442887c63f2c839b346c192d047a7c87e73d0689c9157b00b53dcc27dd5ea793"
+
+[[package]]
+name = "vstd"
+version = "0.1.0"
+dependencies = [
+ "builtin",
+ "builtin_macros",
+]
 
 [[package]]
 name = "walkdir"

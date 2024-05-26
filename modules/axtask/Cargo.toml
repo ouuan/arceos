@@ -34,7 +34,7 @@ axconfig = { path = "../axconfig", optional = true }
 percpu = { path = "../../crates/percpu", optional = true }
 spinlock = { path = "../../crates/spinlock", optional = true }
 lazy_init = { path = "../../crates/lazy_init", optional = true }
-memory_addr = { path = "../../crates/memory_addr", optional = true }
+memory_addr = { path = "../../../verified-memory-addr", optional = true }
 scheduler = { path = "../../crates/scheduler", optional = true }
 timer_list = { path = "../../crates/timer_list", optional = true }
 kernel_guard = { path = "../../crates/kernel_guard", optional = true }

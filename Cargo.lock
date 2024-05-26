@@ -1263,6 +1263,9 @@ dependencies = [
 [[package]]
 name = "memory_addr"
 version = "0.1.0"
+dependencies = [
+ "vstd",
+]
 
 [[package]]
 name = "micromath"

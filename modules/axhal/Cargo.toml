@@ -13,7 +13,8 @@ documentation = "https://rcore-os.github.io/arceos/axhal/index.html"
 smp = []
 alloc = []
 fp_simd = []
-paging = ["axalloc", "page_table"]
+paging = ["axalloc", "page_table", "nrpt"]
+nrpt = ["nr_page_table"]
 irq = []
 tls = ["alloc"]
 default = []
@@ -36,6 +37,7 @@ percpu = { path = "../../crates/percpu" }
 memory_addr = { path = "../../../verified-memory-addr" }
 handler_table = { path = "../../crates/handler_table" }
 crate_interface = { path = "../../crates/crate_interface" }
+nr_page_table = { path = "../../../nr-page-table", optional = true }
 
 [target.'cfg(target_arch = "x86_64")'.dependencies]
 x86 = "0.52"
